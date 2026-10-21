@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tappit jóias | Elegância e Design</title>
+  <link rel="stylesheet" href="estilo.css">
+  <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #e0f2fe;
+  color: #0f172a;
+
+  /* 
+    Como a barra está fixa, ela flutua sobre o conteúdo. Então
+  como a barra possui altura e padding que são de 65px eu adicionei o padding-top de 80px no body (65px da barra + 15px de um respiro visual) 
+    para que o aviso de boas-vindas e o conteúdo não fiquem escondidos atrás da barra.
+  */
+  padding-top: 80px;
+}
+
+.barra-topo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 30px;
+  background-color: #0369a1;
+  z-index: 1000;
+}
+
+.logo-area {
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.nome-marca {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: lowercase;
+}
+
+.sub-logo {
+  font-size: 11px;
+  color: #bae6fd;
+}
+
+.barra-topo ul {
+  list-style: none;
+  float: right;
+}
+
+.barra-topo ul::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.barra-topo li {
+  float: left;
+  margin-left: 10px;
+}
+
+.barra-topo li a {
+  display: block;
+  padding: 8px 14px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.barra-topo li a:hover {
+  background-color: #0284c7;
+  border-radius: 4px;
+}
+
+.barra-topo::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.aviso {
+  position: relative;
+  padding: 15px 40px 15px 15px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1000px;
+  background-color: #06b6d4;
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+#fechar-aviso {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  color: #ffffff;
+}
+
+#fechar-aviso:hover {
+  color: #0f172a;
+}
+
+.mensagem {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+main {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  gap: 20px;
+}
+
+main .bloco-info {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 6px;
+  border-top: 4px solid #0284c7;
+  box-shadow: 0 2px 8px rgba(3, 105, 161, 0.1);
+}
+
+main .bloco-info h2 {
+  font-size: 18px;
+  color: #0369a1;
+  margin-bottom: 12px;
+}
+
+main .bloco-info p {
+  color: #334155;
+  font-size: 13.5px;
+  margin-bottom: 10px;
+}
+
+
+/* 
+    Parte C. Respostas:
+
+  1. Resposta: O position: fixed remove o elemento do fluxo normal da página. 
+       Sem o espaço extra, a barra cobriria a parte superior do conteúdo inicial.
+
+  2. Resposta: 'fixed' prende o elemento na tela em relação à janela (viewport), 
+       permanecendo visível ao rolar. 'absolute' posiciona em relação ao ancestral 
+       posicionado e sobe/some junto com a página ao rolar.
+
+  3. Resposta: No modelo padrão (content-box), a largura total seria width (100%) 
+       mais os paddings esquerdo e direito, fazendo a barra transbordar a tela 
+       e gerar barra de rolagem horizontal. Com border-box, o padding fica embutido 
+       na largura de 100%.
+*/
+  </style>
+</head>
+<body>
+
+  <nav class="barra-topo">
+
+    <div class="logo-area">
+      <span class="nome-marca">tappit jóias</span>
+      <span class="sub-logo">Design | Aço Inoxidável | Luxo</span>
+    </div>
+
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Produtos</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+
+  </nav>
+
+  <div class="aviso">
+    <p class="mensagem">Frete grátis para compras acima de R$ 150</p>
+    <span id="fechar-aviso">&times;</span>
+  </div>
+
+  <main>
+    <section class="bloco-info">
+      <h2>Coleção Aço & Sofisticação</h2>
+      <p>Desenvolvidas em aço inoxidável de alta durabilidade, nossas peças não escurecem e mantêm o brilho original mesmo com o uso diário.</p>
+      <p>Anéis com acabamento impecável, criados para quem busca estilo contemporâneo, resistência e conforto excepcional.</p>
+    </section>
+
+    <section class="bloco-info">
+      <h2>Experiência & Cuidado</h2>
+      <p>Cada joia é entregue em uma embalagem especial com flanela mágica para manutenção e certificado de garantia da peça.</p>
+      <p>Envio rápido e seguro para todo o país, com suporte personalizado para ajudar você a escolher o tamanho ideal do seu anel.</p>
+    </section>
+  </main>
+
+</body>
+</html>
